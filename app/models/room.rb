@@ -5,18 +5,18 @@ class Room < ApplicationRecord
   # These should return the image filenames (e.g., 'north_0_1.jpg')
 
   def north_image
-    "north_#{self.x}_#{self.y}.jpg"
+    "#{self.id}_north.jpg"
   end
 
   def south_image
-    "south_#{self.x}_#{self.y}.jpg"
+    "#{self.id}_south.jpg"
   end
 
   def east_image
-    "east_#{self.x}_#{self.y}.jpg"
+    "#{self.id}_east.jpg"
   end
 
   def west_image
-    "west_#{self.x}_#{self.y}.jpg"
+    "#{self.id}_west.jpg"
   end
 end
