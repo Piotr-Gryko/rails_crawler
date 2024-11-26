@@ -51,8 +51,15 @@ Rails.application.configure do
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
   config.active_job.queue_adapter = :solid_queue
-  config.solid_queue.connects_to = { database: { writing: :production } }
 
+  # Configure solid_queue to use the 'production' database
+  config.solid_queue.connects_to = { database: { writing: :production } } 
+
+  # Configure solid_cache to use the 'production' database (or a separate cache database if needed)
+  # Refer to the solid_cache documentation for the exact configuration:
+  # https://github.com/solid-rb/solid_cache 
+  # Example (replace with the correct configuration if needed):
+  config.solid_cache.connects_to = { database: { writing: :production } } 
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
