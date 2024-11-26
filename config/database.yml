@@ -79,20 +79,22 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  primary: &primary_production
-    <<: *default
-    database: dungeon_crawler_production
-    username: dungeon_crawler
-    password: <%= ENV["DUNGEON_CRAWLER_DATABASE_PASSWORD"] %>
-  cache:
-    <<: *primary_production
-    database: dungeon_crawler_production_cache
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *primary_production
-    database: dungeon_crawler_production_queue
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *primary_production
-    database: dungeon_crawler_production_cable
-    migrations_paths: db/cable_migrate
+  <<: *default
+  database: <%= ENV['RENDER_DATABASE_NAME'] %>
+  username: <%= ENV['RENDER_DATABASE_USER'] %>
+  password: <%= ENV['RENDER_DATABASE_PASSWORD'] %>
+  host: <%= ENV['RENDER_DATABASE_HOST'] %>
+  port: <%= ENV['RENDER_DATABASE_PORT'] %> 
+
+  #cache:
+  #  <<: *primary_production
+  #  database: dungeon_crawler_production_cache
+  #  migrations_paths: db/cache_migrate
+  #queue:
+  #  <<: *primary_production
+  #  database: dungeon_crawler_production_queue
+  #  migrations_paths: db/queue_migrate
+  #cable:
+  #  <<: *primary_production
+  #  database: dungeon_crawler_production_cable
+  #  migrations_paths: db/cable_migrate
