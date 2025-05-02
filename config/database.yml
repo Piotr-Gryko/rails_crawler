@@ -13,7 +13,7 @@ development:
 
 production:
   <<: *default
-  database: rails_crawler_database
-  username: rails_crawler_user
+  database: rails_crawler_new_database
+  username: rails_crawler_new_user
   password: <%= ENV["DATABASE_PASSWORD"] %>
   url: <%= ENV['DATABASE_URL'] %>
