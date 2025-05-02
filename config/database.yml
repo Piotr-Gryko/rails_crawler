@@ -7,13 +7,13 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 
-# development:
-#   <<: *default
-#   database: dungeon_crawler_development
+development:
+  <<: *default
+  database: dungeon_crawler_development
 
 production:
   <<: *default
-  database: rails_crawler_new_database
-  username: rails_crawler_new_user
+  # database: rails_crawler_new_database
+  # username: rails_crawler_new_user
   password: <%= ENV["DATABASE_PASSWORD"] %>
   url: <%= ENV['DATABASE_URL'] %>
