@@ -12,8 +12,8 @@ development:
   database: dungeon_crawler_development
 
 production:
-  <<: *default
+  # <<: *default
   # database: rails_crawler_new_database
   # username: rails_crawler_new_user
-  password: <%= ENV["DATABASE_PASSWORD"] %>
+  # password: <%= ENV["DATABASE_PASSWORD"] %>
   url: <%= ENV['DATABASE_URL'] %>
